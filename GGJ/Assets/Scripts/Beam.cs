@@ -9,8 +9,11 @@ public class Beam : MonoBehaviour {
 
     private float direction;
 
-	// Use this for initialization
-	void Start ()
+    [SerializeField]
+    private GameObject hitparticlePrefab; //Hitエフェクト
+
+    // Use this for initialization
+    void Start ()
     {
 
         //プレイヤーオブジェクトを取得
@@ -38,4 +41,15 @@ public class Beam : MonoBehaviour {
         }
 
     }
+
+    void OnParticleCollision(GameObject obj)
+    {
+        if (obj.tag == "Tile")
+        {
+            Instantiate(hitparticlePrefab,transform.position,Quaternion.identity);
+
+            Destroy(gameObject);
+        }
+    }
+
 }

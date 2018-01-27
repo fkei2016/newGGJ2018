@@ -54,6 +54,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+  hitparticlePrefab: {fileID: 1368496354098712, guid: 279b48c8929705145b208ac4c3a70a9b,
+    type: 2}
 --- !u!198 &198657339491868984
 ParticleSystem:
   m_ObjectHideFlags: 1

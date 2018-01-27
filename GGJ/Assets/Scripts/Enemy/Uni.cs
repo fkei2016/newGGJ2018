@@ -8,8 +8,7 @@ public class Uni : MonoBehaviour {
     private float speed;
 
     private bool moveflag = false;
-    
-
+   
     private GameObject Player;
 
     [SerializeField]
