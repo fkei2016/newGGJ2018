@@ -21,10 +21,16 @@ public class Title : MonoBehaviour {
     }
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("Story1");
         }
+
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             BulletUpFlag = true;

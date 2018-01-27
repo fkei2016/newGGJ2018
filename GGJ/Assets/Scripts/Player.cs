@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 public class Player : MonoBehaviour {
 
     [SerializeField]
@@ -27,10 +30,13 @@ public class Player : MonoBehaviour {
 
     private int MaxHp = 20; //MaxHP
 
+    public Slider slider;//体力ゲージのUI
+
 
     // Use this for initialization
     void Start() {
 
+       
 
     }
 
@@ -61,6 +67,10 @@ public class Player : MonoBehaviour {
 
         //格闘攻撃
         Attack();
+
+        //UIにhpとかを伝える。
+        slider.maxValue = MaxHp;
+        slider.value = hp;
 
         //死亡
         if (hp <= 0)
