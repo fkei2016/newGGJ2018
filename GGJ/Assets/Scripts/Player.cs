@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Player : MonoBehaviour {
 
     [SerializeField]
@@ -27,7 +26,6 @@ public class Player : MonoBehaviour {
     public int hp = 20; //hp
 
     private int MaxHp = 20; //MaxHP
-
 
 
     // Use this for initialization
@@ -61,9 +59,9 @@ public class Player : MonoBehaviour {
         //死亡
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            gameObject.SetActive(false);
         }
-
     }
 
     //キャラの左右移動
