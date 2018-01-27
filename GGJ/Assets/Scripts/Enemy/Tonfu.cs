@@ -62,5 +62,11 @@ public class Tonfu : MonoBehaviour {
                 Destroy(gameObject);
         }
     }
+    void OnCollisionEnter2D(Collision2D coll)
+    {
 
+        if (coll.gameObject.tag == "Player")
+            Player.GetComponent<Player>().hp -= 2;
+
+    }
 }

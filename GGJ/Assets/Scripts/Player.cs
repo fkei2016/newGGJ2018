@@ -24,7 +24,12 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private GameObject attackPrefab; //格闘攻撃のプレファブ
 
-    private float shootTime = 0.0f;
+    private float shootTime = 0.0f; //ショットタイム
+
+    public int hp = 20; //hp
+
+    private int MaxHp = 20; //MaxHP
+
 
 
     // Use this for initialization
@@ -54,6 +59,12 @@ public class Player : MonoBehaviour {
 
         //格闘攻撃
         Attack();
+
+        //死亡
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
 
     }
 

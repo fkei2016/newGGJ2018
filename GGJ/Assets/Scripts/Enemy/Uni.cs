@@ -52,16 +52,13 @@ public class Uni : MonoBehaviour {
         return false;
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D coll)
     {
 
-        //if (collision.transform.tag == "Bullet")
-        //{
-        //    print("aaaa");
-        //    Destroy(this.gameObject);
-        //}
-
+        if (coll.gameObject.tag == "Player")
+            Player.GetComponent<Player>().hp -= 1;
     }
+
     void OnParticleCollision(GameObject obj)
     {
         if (obj.tag == "Bullet")
@@ -70,6 +67,4 @@ public class Uni : MonoBehaviour {
             Destroy(obj);
         }
     }
-
-
 }

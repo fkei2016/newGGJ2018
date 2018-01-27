@@ -38,18 +38,4 @@ public class Beam : MonoBehaviour {
         }
 
     }
-
-    //void OnParticleCollision(GameObject obj)
-    //{
-    //    print("ccc");
-
-    //    if (obj.tag == "Enemy")
-    //    {
-    //        Destroy(this.gameObject);
-    //    }
-    //    if (obj.tag != "Player")
-    //    {
-    //        Destroy(this.gameObject, 1.0f);
-    //    }
-    //}
 }
