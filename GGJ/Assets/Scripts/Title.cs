@@ -14,7 +14,7 @@ public class Title : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Play");
+            SceneManager.LoadScene("Story1");
         }
 
     }
