@@ -59,9 +59,9 @@ public class Player : MonoBehaviour {
             Shoot();
         }
 
-        if (transform.position.y <= -8.0f)
+        if (transform.position.y <= -7.0f)
         {
-            gameObject.SetActive(false);
+            hp = 0;
         }
 
 
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour {
         if (hp <= 0)
         {
             // Destroy(gameObject);
-            gameObject.SetActive(false);
+           gameObject.SetActive(false);
         }
     }
 
