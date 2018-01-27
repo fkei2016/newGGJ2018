@@ -23,7 +23,7 @@ public class Story1 : MonoBehaviour {
             storyFrame = 0;
         }
 
-        if (storytime >= 10)
+        if (storytime >= 5)
         {
             SceneManager.LoadScene("Play");
         }
