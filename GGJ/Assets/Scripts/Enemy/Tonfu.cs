@@ -64,6 +64,7 @@ public class Tonfu : MonoBehaviour {
 
     void OnParticleCollision(GameObject obj)
     {
+        
         if (obj.tag == "Bullet")
         {
             //ヒットパーティクルの生成
@@ -78,6 +79,14 @@ public class Tonfu : MonoBehaviour {
                 Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
 
             }
+        }
+        if (obj.tag == "Attack")
+        {
+            //死亡パーティクルの生成
+            Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
+
+            Destroy(this.gameObject);
+            Destroy(obj);
         }
     }
     void OnCollisionEnter2D(Collision2D coll)

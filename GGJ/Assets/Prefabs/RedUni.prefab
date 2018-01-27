@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4978796354302824}
   - component: {fileID: 212175689704261722}
-  - component: {fileID: 50348790372591176}
   - component: {fileID: 58864767986545080}
   - component: {fileID: 114832131753511202}
-  m_Layer: 0
+  - component: {fileID: 50103318874560174}
+  m_Layer: 10
   m_Name: RedUni
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -37,13 +37,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119858191439956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.15, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50348790372591176
+--- !u!50 &50103318874560174
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -61,8 +61,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!58 &58864767986545080
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -90,8 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  hitparticlePrefab: {fileID: 0}
-  deathparticlePrefab: {fileID: 0}
+  hitparticlePrefab: {fileID: 1368496354098712, guid: 279b48c8929705145b208ac4c3a70a9b,
+    type: 2}
+  deathparticlePrefab: {fileID: 1606583958563642, guid: 6b1188925cae98344b4ac26df8dfaaf9,
+    type: 2}
 --- !u!212 &212175689704261722
 SpriteRenderer:
   m_ObjectHideFlags: 1

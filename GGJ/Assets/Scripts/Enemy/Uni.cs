@@ -92,5 +92,13 @@ public class Uni : MonoBehaviour {
             Destroy(this.gameObject);
             Destroy(obj);
         }
+        if (obj.tag == "Attack")
+        {
+            //死亡パーティクルの生成
+            Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
+
+            Destroy(this.gameObject);
+            Destroy(obj);
+        }
     }
 }
