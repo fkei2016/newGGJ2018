@@ -79,14 +79,14 @@ public class Player : MonoBehaviour {
         {
             //localScale.xを-1にすると画像が反転する
             Vector2 temp = transform.localScale;
-            temp.x = -1.0f;
+            temp.x = -2.0f;
             transform.localScale = temp;
         }
         else if (translation > 0)
         {
             //localScale.xを1にすると画像が反転する
             Vector2 temp = transform.localScale;
-            temp.x = 1.0f;
+            temp.x = 2.0f;
             transform.localScale = temp;
         }
     }
