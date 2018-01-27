@@ -14,6 +14,13 @@ public class Tonfu : MonoBehaviour {
 
     private int hp = 2;
 
+    [SerializeField]
+    private GameObject hitparticlePrefab;
+
+    [SerializeField]
+    private GameObject deathparticlePrefab;
+
+
     // Use this for initialization
     void Start () {
 		
@@ -56,10 +63,18 @@ public class Tonfu : MonoBehaviour {
     {
         if (obj.tag == "Bullet")
         {
+            //ヒットパーティクルの生成
+            Instantiate(hitparticlePrefab, transform.position, Quaternion.identity);
+
             Destroy(obj);
             hp--;
             if (hp == 0)
+            {
                 Destroy(gameObject);
+                //死亡パーティクルの生成
+                Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
+
+            }
         }
     }
     void OnCollisionEnter2D(Collision2D coll)
@@ -69,6 +84,9 @@ public class Tonfu : MonoBehaviour {
         {
             //プレイヤーにダメージを与える
             Player.GetComponent<Player>().hp -= 2;
+
+            //ヒットパーティクルの生成
+            Instantiate(hitparticlePrefab, transform.position, Quaternion.identity);
 
             //ノックバック
             Vector2 direction = Player.transform.position - transform.position;

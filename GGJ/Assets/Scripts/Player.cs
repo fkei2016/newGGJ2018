@@ -13,8 +13,6 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private LayerMask groundlayer;　//着地判定
 
-    private bool grounded = false;　//着地判定
-
     [SerializeField]
     private Camera charaCamera; //キャラ追従カメラ
 

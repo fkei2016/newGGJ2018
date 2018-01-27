@@ -12,9 +12,14 @@ public class Uni : MonoBehaviour {
     [SerializeField]
     private GameObject Player;
 
+    [SerializeField]
+    private GameObject hitparticlePrefab;
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    private GameObject deathparticlePrefab;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -65,6 +70,9 @@ public class Uni : MonoBehaviour {
             //プレイヤーにダメージを与える
             Player.GetComponent<Player>().hp -= 1;
 
+            //ヒットパーティクルの生成
+            Instantiate(hitparticlePrefab, transform.position, Quaternion.identity);
+
             //ノックバック
             Vector2 direction = Player.transform.position - transform.position;
             GetComponent<Rigidbody2D>().AddForce(direction * -3000.0f);
@@ -78,6 +86,9 @@ public class Uni : MonoBehaviour {
     {
         if (obj.tag == "Bullet")
         {
+            //死亡パーティクルの生成
+            Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
+
             Destroy(this.gameObject);
             Destroy(obj);
         }
