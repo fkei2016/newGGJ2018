@@ -16,6 +16,9 @@ public class Beam : MonoBehaviour {
         var player = GameObject.FindWithTag("Player");
 
         direction = player.transform.localScale.x;
+        
+
+
 
         //5秒後に消滅
         Destroy(gameObject, 5.0f);
