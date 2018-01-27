@@ -305,7 +305,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 419298810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 15}
+  m_LocalPosition: {x: 0.1, y: 0, z: 15}
   m_LocalScale: {x: 1.2937639, y: 1.3220549, z: 1}
   m_Children: []
   m_Father: {fileID: 1947946197}
@@ -575,7 +575,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 803634572
+  randomSeed: -915434199
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4313,7 +4313,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 6.82
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
