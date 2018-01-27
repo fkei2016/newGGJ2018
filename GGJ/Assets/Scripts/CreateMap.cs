@@ -14,7 +14,7 @@ public class CreateMap : MonoBehaviour
 
     [HideInInspector]
     public float scaling = 1F;
-
+    
 
     private void Start()
     {

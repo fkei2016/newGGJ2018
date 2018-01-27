@@ -66,7 +66,13 @@ public class Tonfu : MonoBehaviour {
     {
 
         if (coll.gameObject.tag == "Player")
+        {
+            //プレイヤーにダメージを与える
             Player.GetComponent<Player>().hp -= 2;
 
+            //ノックバック
+            Vector2 direction = Player.transform.position - transform.position;
+            GetComponent<Rigidbody2D>().AddForce(direction * -200.0f);
+        }
     }
 }

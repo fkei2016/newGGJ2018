@@ -27,6 +27,11 @@ public class Uni : MonoBehaviour {
 
     void Move()
     {
+
+        //物理計算をカット
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().angularVelocity = 0;
+
         moveflag = Senser();
 
         if (moveflag)
@@ -56,7 +61,17 @@ public class Uni : MonoBehaviour {
     {
 
         if (coll.gameObject.tag == "Player")
+        {
+            //プレイヤーにダメージを与える
             Player.GetComponent<Player>().hp -= 1;
+
+            //ノックバック
+            Vector2 direction = Player.transform.position - transform.position;
+            GetComponent<Rigidbody2D>().AddForce(direction * -3000.0f);
+
+            
+
+        }
     }
 
     void OnParticleCollision(GameObject obj)
