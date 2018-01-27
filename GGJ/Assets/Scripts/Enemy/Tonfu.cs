@@ -8,8 +8,7 @@ public class Tonfu : MonoBehaviour {
     private float speed;
 
     private bool moveflag = false;
-
-    [SerializeField]
+    
     private GameObject Player;
 
     private int hp = 2;
@@ -23,13 +22,17 @@ public class Tonfu : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+        
+        //プレイヤーの情報を取得
+        Player = GameObject.FindWithTag("Player");
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        Move();
+        if(Player != null)
+            Move();
 	}
 
     void Move()

@@ -8,8 +8,8 @@ public class Uni : MonoBehaviour {
     private float speed;
 
     private bool moveflag = false;
+    
 
-    [SerializeField]
     private GameObject Player;
 
     [SerializeField]
@@ -20,13 +20,15 @@ public class Uni : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+
+        //プレイヤーの情報を取得
+        Player = GameObject.FindWithTag("Player");
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
-        Move();
+        if(Player != null)
+            Move();
 
 	}
 
@@ -76,8 +78,6 @@ public class Uni : MonoBehaviour {
             //ノックバック
             Vector2 direction = Player.transform.position - transform.position;
             GetComponent<Rigidbody2D>().AddForce(direction * -3000.0f);
-
-            
 
         }
     }
