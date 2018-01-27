@@ -53,6 +53,12 @@ public class Player : MonoBehaviour {
             Shoot();
         }
 
+        if (transform.position.y <= -8.0f)
+        {
+            gameObject.SetActive(false);
+        }
+
+
         //格闘攻撃
         Attack();
 
