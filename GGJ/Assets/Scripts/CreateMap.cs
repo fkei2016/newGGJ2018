@@ -38,10 +38,19 @@ public class CreateMap : MonoBehaviour
             {
                 // 読み込んだからマップを作成
                 int integer = int.Parse(value);
-                if (integer >= 0 && integer < mapdatePrefab.Length)
+                //if (integer >= 0 && integer < mapdatePrefab.Length)
+                //{
+                //    // 位置座標の差分を加味してリソースを配置
+                //    var obj = Instantiate(mapdatePrefab[integer], transform);
+                //    obj.transform.position = transform.position + sub;
+                //    obj.transform.localScale *= scaling;
+
+                //}
+                if (integer == 0)
                 {
+                    int num = Random.Range(0, 2);
                     // 位置座標の差分を加味してリソースを配置
-                    var obj = Instantiate(mapdatePrefab[integer], transform);
+                    var obj = Instantiate(mapdatePrefab[num], transform);
                     obj.transform.position = transform.position + sub;
                     obj.transform.localScale *= scaling;
 

@@ -90,7 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  Player: {fileID: 0}
+  hitparticlePrefab: {fileID: 0}
+  deathparticlePrefab: {fileID: 0}
 --- !u!212 &212175689704261722
 SpriteRenderer:
   m_ObjectHideFlags: 1
