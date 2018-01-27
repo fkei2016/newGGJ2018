@@ -10,16 +10,14 @@ public class Beam : MonoBehaviour {
     private float direction;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 
         //プレイヤーオブジェクトを取得
         var player = GameObject.FindWithTag("Player");
 
         direction = player.transform.localScale.x;
         
-
-
-
         //5秒後に消滅
         Destroy(gameObject, 5.0f);
     }
@@ -41,16 +39,17 @@ public class Beam : MonoBehaviour {
 
     }
 
-    void OnParticleCollision(GameObject obj)
-    {
-        if (obj.tag == "Enemy")
-        {
-            Destroy(obj);
-            Destroy(this.gameObject,1.0f);
-        }
-        if (obj.tag != "Player")
-        {
-            Destroy(this.gameObject, 1.0f);
-        }
-    }
+    //void OnParticleCollision(GameObject obj)
+    //{
+    //    print("ccc");
+
+    //    if (obj.tag == "Enemy")
+    //    {
+    //        Destroy(this.gameObject);
+    //    }
+    //    if (obj.tag != "Player")
+    //    {
+    //        Destroy(this.gameObject, 1.0f);
+    //    }
+    //}
 }
