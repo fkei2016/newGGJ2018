@@ -7,6 +7,9 @@ public class Tonfu : MonoBehaviour {
     [SerializeField]
     private float speed;
 
+    [SerializeField]
+    private float see = 5.0f;
+
     private bool moveflag = false;
     
     private GameObject Player;
@@ -18,6 +21,13 @@ public class Tonfu : MonoBehaviour {
 
     [SerializeField]
     private GameObject deathparticlePrefab;
+
+
+    [SerializeField]
+    private string HitSE;
+
+    [SerializeField]
+    private string DethSE;
 
 
     // Use this for initialization
@@ -69,6 +79,7 @@ public class Tonfu : MonoBehaviour {
         {
             //ヒットパーティクルの生成
             Instantiate(hitparticlePrefab, transform.position, Quaternion.identity);
+            AudioManager.Instance.PlaySE(HitSE);
 
             Destroy(obj);
             hp--;
@@ -77,6 +88,7 @@ public class Tonfu : MonoBehaviour {
                 Destroy(gameObject);
                 //死亡パーティクルの生成
                 Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
+                AudioManager.Instance.PlaySE(DethSE);
 
             }
         }
@@ -84,6 +96,7 @@ public class Tonfu : MonoBehaviour {
         {
             //死亡パーティクルの生成
             Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
+            AudioManager.Instance.PlaySE(DethSE);
 
             Destroy(this.gameObject);
             Destroy(obj);
@@ -94,6 +107,9 @@ public class Tonfu : MonoBehaviour {
 
         if (coll.gameObject.tag == "Player")
         {
+
+            AudioManager.Instance.PlaySE(HitSE);
+
             //プレイヤーにダメージを与える
             Player.GetComponent<Player>().hp -= 2;
 

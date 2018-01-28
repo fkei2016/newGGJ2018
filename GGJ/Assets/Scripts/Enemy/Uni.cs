@@ -7,6 +7,9 @@ public class Uni : MonoBehaviour {
     [SerializeField]
     private float speed;
 
+    [SerializeField]
+    private float see = 5.0f;
+
     private bool moveflag = false;
    
     private GameObject Player;
@@ -16,6 +19,12 @@ public class Uni : MonoBehaviour {
 
     [SerializeField]
     private GameObject deathparticlePrefab;
+
+    [SerializeField]
+    private string HitSE;
+
+    [SerializeField]
+    private string DethSE;
 
     // Use this for initialization
     void Start () {
@@ -55,7 +64,7 @@ public class Uni : MonoBehaviour {
     {
         float dis = Player.transform.position.x - transform.position.x;
 
-        if (Mathf.Abs(dis) <= 5)
+        if (Mathf.Abs(dis) <= see)
         {
             return true;
         }
@@ -74,6 +83,9 @@ public class Uni : MonoBehaviour {
             //ヒットパーティクルの生成
             Instantiate(hitparticlePrefab, transform.position, Quaternion.identity);
 
+            AudioManager.Instance.PlaySE(HitSE);
+
+
             //ノックバック
             Vector2 direction = Player.transform.position - transform.position;
             GetComponent<Rigidbody2D>().AddForce(direction * -3000.0f);
@@ -90,6 +102,7 @@ public class Uni : MonoBehaviour {
 
             Destroy(this.gameObject);
             Destroy(obj);
+            AudioManager.Instance.PlaySE(DethSE);
         }
         if (obj.tag == "Attack")
         {
@@ -98,6 +111,7 @@ public class Uni : MonoBehaviour {
 
             Destroy(this.gameObject);
             Destroy(obj);
+            AudioManager.Instance.PlaySE(DethSE);
         }
     }
 }

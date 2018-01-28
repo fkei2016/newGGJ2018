@@ -12,6 +12,10 @@ public class Beam : MonoBehaviour {
     [SerializeField]
     private GameObject hitparticlePrefab; //Hitエフェクト
 
+    [SerializeField]
+    private string SE;
+
+
     // Use this for initialization
     void Start ()
     {
@@ -46,6 +50,8 @@ public class Beam : MonoBehaviour {
     {
         if (obj.tag == "Tile")
         {
+            AudioManager.Instance.PlaySE(SE);
+
             Instantiate(hitparticlePrefab,transform.position,Quaternion.identity);
 
             Destroy(gameObject);

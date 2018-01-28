@@ -24,6 +24,9 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private GameObject attackPrefab; //格闘攻撃のプレファブ
 
+    [SerializeField]
+    private GameObject dethPrefab; //死亡時エフェクト
+
     private float shootTime = 0.0f; //ショットタイム
 
     private float attackTime = 0.0f; //アタックタイム
@@ -33,6 +36,12 @@ public class Player : MonoBehaviour {
     private int MaxHp = 20; //MaxHP
 
     public Slider slider;//体力ゲージのUI
+
+    [SerializeField]
+    private string shootSE;
+
+    [SerializeField]
+    private string deathSE;
 
 
     // Use this for initialization
@@ -82,6 +91,8 @@ public class Player : MonoBehaviour {
         //死亡
         if (hp <= 0)
         {
+            Instantiate(dethPrefab, transform.position, Quaternion.identity);
+            AudioManager.Instance.PlaySE(deathSE);
             // Destroy(gameObject);
             gameObject.SetActive(false);
         }
@@ -133,6 +144,7 @@ public class Player : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            AudioManager.Instance.PlaySE(shootSE);
             Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             shootTime = 0.0f;
         }
