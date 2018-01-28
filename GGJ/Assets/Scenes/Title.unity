@@ -966,6 +966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63fccfe5f85beb84892fbc1cde4672b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: MenuBGM1
+  SE: UI_Select
 --- !u!4 &1001754937
 Transform:
   m_ObjectHideFlags: 0

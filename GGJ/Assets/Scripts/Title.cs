@@ -11,6 +11,12 @@ public class Title : MonoBehaviour {
     bool BulletLFlag;
     bool BulletInfinite;
 
+    [SerializeField]
+    private string BGM;
+
+    [SerializeField]
+    private string SE;
+
     void Start()
     {
         BulletInfinite = false;
@@ -18,6 +24,12 @@ public class Title : MonoBehaviour {
         BulletDownFlag = false;
         BulletAFlag = false;
         BulletLFlag = false;
+
+        AudioManager.Instance.ChangeVolume(0.1f,2.0f);
+
+
+        AudioManager.Instance.PlayBGM(BGM);
+
     }
     void Update()
     {
@@ -28,6 +40,7 @@ public class Title : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            AudioManager.Instance.PlaySE(SE);
             SceneManager.LoadScene("Story1");
         }
 
