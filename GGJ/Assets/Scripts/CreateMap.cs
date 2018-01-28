@@ -16,6 +16,7 @@ public class CreateMap : MonoBehaviour
     public float scaling = 1F;
     
 
+
     private void Start()
     {
         Make();
@@ -38,23 +39,52 @@ public class CreateMap : MonoBehaviour
             {
                 // 読み込んだからマップを作成
                 int integer = int.Parse(value);
-                //if (integer >= 0 && integer < mapdatePrefab.Length)
-                //{
-                //    // 位置座標の差分を加味してリソースを配置
-                //    var obj = Instantiate(mapdatePrefab[integer], transform);
-                //    obj.transform.position = transform.position + sub;
-                //    obj.transform.localScale *= scaling;
-
-                //}
-                if (integer == 0)
+                if (integer >= 0 && integer < mapdatePrefab.Length)
                 {
-                    int num = Random.Range(0, 2);
-                    // 位置座標の差分を加味してリソースを配置
-                    var obj = Instantiate(mapdatePrefab[num], transform);
+                    //オブジェクトを一個ずつ
+                    GameObject obj = new GameObject();
+                    switch (integer)
+                    {   
+                        //地面
+                        case 0:
+                            int num = Random.Range(0, 2);
+                            obj = Instantiate(mapdatePrefab[num], transform);
+                            break;
+
+                        //ウニ（緑）
+                        case 2:
+                            obj = Instantiate(mapdatePrefab[integer], transform);
+                            break;
+
+                        //ウニ（赤）
+                        case 3:
+                            obj = Instantiate(mapdatePrefab[integer], transform);
+                            break;
+
+                        //トンフィー
+                        case 4:
+                            obj = Instantiate(mapdatePrefab[integer], transform);
+                            break;
+
+                        //中ボス
+                        case 5:
+                            obj = Instantiate(mapdatePrefab[integer], transform);
+                            break;
+
+                        //ラスボス
+                        case 6:
+                            obj = Instantiate(mapdatePrefab[integer], transform);
+                            break;
+
+                        //空白
+                        default:
+                            break;
+                    }
+                     
                     obj.transform.position = transform.position + sub;
                     obj.transform.localScale *= scaling;
-
                 }
+               
                 sub.x += scaling * 1.25F;
             }
             sub.x = 0; sub.y -= scaling * 1.25F;

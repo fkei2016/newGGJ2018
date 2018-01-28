@@ -26,6 +26,8 @@ public class Player : MonoBehaviour {
 
     private float shootTime = 0.0f; //ショットタイム
 
+    private float attackTime = 0.0f; //アタックタイム
+
     public int hp = 20; //hp
 
     private int MaxHp = 20; //MaxHP
@@ -56,6 +58,7 @@ public class Player : MonoBehaviour {
         shootTime += Time.deltaTime;
         if (shootTime > 1.0f)
         {
+            //遠距離攻撃
             Shoot();
         }
 
@@ -64,9 +67,13 @@ public class Player : MonoBehaviour {
             gameObject.SetActive(false);
         }
 
-
-        //格闘攻撃
-        Attack();
+        attackTime += Time.deltaTime;
+        //格闘のリロード時間
+        if (attackTime > 0.8f)
+        {
+            //格闘攻撃
+            Attack();
+        }
 
         //UIにhpとかを伝える。
         slider.maxValue = MaxHp;
@@ -139,6 +146,7 @@ public class Player : MonoBehaviour {
             var pos = transform.position;
             pos.x += transform.localScale.x * 1.25f;
             Instantiate(attackPrefab, pos, Quaternion.identity);
+            attackTime = 0.0f;
         }
     }
 
