@@ -573,6 +573,47 @@ Transform:
   m_Father: {fileID: 1947946197}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &438336250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 438336251}
+  - component: {fileID: 438336252}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &438336251
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 438336250}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &438336252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 438336250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b96c0884d019547a3cd9f0d2eb0fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgm: GameBGM2
 --- !u!1 &465393224
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,8 +815,11 @@ MonoBehaviour:
     type: 2}
   attackPrefab: {fileID: 1947373942176544, guid: c30325cc36e194643b693c5126feb345,
     type: 2}
+  dethPrefab: {fileID: 1657888751332710, guid: 07f58fdffda67c942be7aa862196c63c, type: 2}
   hp: 20
   slider: {fileID: 622431029}
+  shootSE: Shot
+  deathSE: Kill
 --- !u!58 &502055645
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -788,9 +832,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029524326, y: 0.000000059604645}
+  m_Offset: {x: -0.058113217, y: -0.024837375}
   serializedVersion: 2
-  m_Radius: 0.48701292
+  m_Radius: 0.46827424
 --- !u!1 &540874143
 GameObject:
   m_ObjectHideFlags: 0

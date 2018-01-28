@@ -5,6 +5,9 @@ using UnityEngine;
 public class Boss : MonoBehaviour {
 
     [SerializeField]
+    private float see = 15.0f;
+
+    [SerializeField]
     private int HP = 10;    //  HP
     
     [SerializeField]
@@ -23,8 +26,16 @@ public class Boss : MonoBehaviour {
     private GameObject hitparticlePrefab;　//Hitエフェクト
 
     [SerializeField]
-    private GameObject deathparticlePrefab;　//死亡時エフェクト
+    private GameObject deathparticlePrefab; //死亡時エフェクト
 
+    [SerializeField]
+    private string HitSE;
+
+    [SerializeField]
+    private string DethSE;
+
+    [SerializeField]
+    private string shootSE;
 
     // Use this for initialization
     void Start () {
@@ -54,6 +65,8 @@ public class Boss : MonoBehaviour {
                     obj.GetComponent<Rigidbody2D>().AddForce(dir * 100.0f);
 
                     time = 0.0f;
+
+                    AudioManager.Instance.PlaySE(shootSE);
                 }
             }
         }
@@ -64,7 +77,7 @@ public class Boss : MonoBehaviour {
     {
         float dis = Player.transform.position.x - transform.position.x;
 
-        if (Mathf.Abs(dis) <= 10)
+        if (Mathf.Abs(dis) <= see)
         {
             return true;
         }
@@ -79,6 +92,7 @@ public class Boss : MonoBehaviour {
         {
             //ヒットパーティクルの生成
             Instantiate(hitparticlePrefab, transform.position, Quaternion.identity);
+            AudioManager.Instance.PlaySE(HitSE);
 
             Destroy(obj);
             HP--;
@@ -87,6 +101,8 @@ public class Boss : MonoBehaviour {
                 Destroy(gameObject);
                 //死亡パーティクルの生成
                 Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
+                AudioManager.Instance.PlaySE(DethSE);
+
 
             }
         }
@@ -94,6 +110,7 @@ public class Boss : MonoBehaviour {
         {
             //ヒットパーティクルの生成
             Instantiate(hitparticlePrefab, transform.position, Quaternion.identity);
+            AudioManager.Instance.PlaySE(HitSE);
 
             Destroy(obj);
             HP -= 5;
@@ -102,6 +119,7 @@ public class Boss : MonoBehaviour {
                 Destroy(gameObject);
                 //死亡パーティクルの生成
                 Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
+                AudioManager.Instance.PlaySE(DethSE);
 
             }
         }

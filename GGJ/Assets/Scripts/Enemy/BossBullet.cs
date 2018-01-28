@@ -11,6 +11,9 @@ public class BossBullet : MonoBehaviour {
 
     [SerializeField]
     private GameObject hitparticlePrefab; //Hitエフェクト
+    
+    [SerializeField]
+    private string HitSE;
 
     // Use this for initialization
     void Start () {
@@ -35,6 +38,7 @@ public class BossBullet : MonoBehaviour {
 
         //ヒットパーティクルの生成
         Instantiate(hitparticlePrefab, transform.position, Quaternion.identity);
+        AudioManager.Instance.PlaySE(HitSE);
 
         Destroy(gameObject);
     }

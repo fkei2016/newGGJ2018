@@ -94,6 +94,8 @@ MonoBehaviour:
     type: 2}
   deathparticlePrefab: {fileID: 1606583958563642, guid: 6b1188925cae98344b4ac26df8dfaaf9,
     type: 2}
+  HitSE: Hit
+  DethSE: Kill
 --- !u!212 &212097679272048504
 SpriteRenderer:
   m_ObjectHideFlags: 1
