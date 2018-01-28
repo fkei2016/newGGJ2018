@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3379af2e641c0874ea1e35c7789dfee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 10
+  attack: 5
   hitparticlePrefab: {fileID: 1368496354098712, guid: 279b48c8929705145b208ac4c3a70a9b,
     type: 2}
 --- !u!212 &212098377524869958

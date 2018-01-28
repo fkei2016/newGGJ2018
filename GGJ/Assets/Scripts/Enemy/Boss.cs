@@ -82,7 +82,7 @@ public class Boss : MonoBehaviour {
 
             Destroy(obj);
             HP--;
-            if (HP == 0)
+            if (HP <= 0)
             {
                 Destroy(gameObject);
                 //死亡パーティクルの生成
@@ -92,14 +92,18 @@ public class Boss : MonoBehaviour {
         }
         if (obj.tag == "Attack")
         {
-            //死亡パーティクルの生成
-            Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
+            //ヒットパーティクルの生成
+            Instantiate(hitparticlePrefab, transform.position, Quaternion.identity);
 
-            Destroy(this.gameObject);
             Destroy(obj);
+            HP -= 5;
+            if (HP <= 0)
+            {
+                Destroy(gameObject);
+                //死亡パーティクルの生成
+                Instantiate(deathparticlePrefab, transform.position, Quaternion.identity);
+
+            }
         }
     }
-
-
-
 }
