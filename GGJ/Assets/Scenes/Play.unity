@@ -1108,7 +1108,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -1193186254
+  randomSeed: 342317442
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5509,7 +5509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e92113003dc9341ace2458d7e5732f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mapchip: {fileID: 4900000, guid: 8bf784493c141f448bac6ba228d27da6, type: 3}
+  _mapchip: {fileID: 4900000, guid: 418592a7ac97e4b49981299fb809fbff, type: 3}
   mapdatePrefab:
   - {fileID: 1470000352577998, guid: ff81cf025a699f84baa655f6bd570531, type: 2}
   - {fileID: 1636081584282200, guid: fe2c965308347fa499049af76d94327b, type: 2}
