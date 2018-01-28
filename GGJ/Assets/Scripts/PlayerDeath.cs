@@ -24,7 +24,7 @@ public class PlayerDeath : MonoBehaviour {
         //シーン移動する
         if (DeathCount >= 2)
         {
-            SceneManager.LoadScene("Result");
+            SceneManager.LoadScene("Death");
         }
 
 
